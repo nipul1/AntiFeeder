@@ -1,0 +1,30 @@
+{
+    "name": "AntiFeeder Extension",
+    "description": "This is for killing attractive feeds",
+    "version": "0.1.0",
+    "manifest_version": 2, 
+    "icons": {
+        "16": "./pen_16.jpg", 
+        "32": "./pen_32.jpg", 
+        "48": "./pen_48.jpg", 
+        "128": "./pen_128.jpg" 
+    },
+    "background":{
+        "scripts": ["./background.js"]
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "https://www.youtube.com/*"
+          ],
+          "js": ["content.js"]
+        }
+      ],
+    "options_page": "popup.html",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions":[
+        "tabs", "https://www.youtube.com/*"
+    ]
+}
